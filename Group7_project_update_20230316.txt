@@ -1,0 +1,22 @@
+We have been evaluating datasets obtained from nextstrain.org to identify files containing the information needed to accomplish our project objective. Nextstrain is an opensource project for pathogen surveillance. The website allows the user to visualize SARS-CoV-2 populations to help understand the virus’s evolution over time and identify geographic trends.
+
+Nextstrain datasets originate from two different sources: GISAID and GenBank. GenBank data is open source, so we will use GenBank data for this project.
+
+Metadata, raw sequences, aligned sequences, and auspice files are available from Nextstrain. Auspice files are the files required for Nextstrain’s visualization tool, Auspice:
+
+https://docs.nextstrain.org/projects/auspice/en/stable/index.html
+
+Each of the files mentioned above can be downloaded as subsets based on geographic region. At this project stage, we will focus on the North American subset.
+
+The metadata file contains fields such as sample collection date, region (e.g. North America), country, division (e.g. State, for samples collected in the US), and GenBank accession.
+
+The metadata files have been a source of confusion. Depending on the URL or user inputs used to download them, the content can differ in scope. For example, the “metadata.tsv” obtained from the “North America sample” here has more complete information (more columns) than metadata files downloaded from other locations on the site:
+
+https://docs.nextstrain.org/projects/ncov/en/latest/reference/remote_inputs.html
+
+
+Some metadata files specify the clade represented by the sequence, sequence quality information, and patient demographic information. Depending on the website location where the user obtains the metadata file, it can be large and difficult to manipulate.
+
+So far, we have successfully been able to subset an example metadata file based on collection date, and we have been able to download FASTA files for that subset of data from the NCBI Batch Entrez tool using the GenBank accession.
+
+Critical next steps for the project include identifying which data fields are necessary and which aren’t. This decision will guide further analysis, such as DQA and dividing the cleaned data into subsets for analysis based on geographic location and time.
